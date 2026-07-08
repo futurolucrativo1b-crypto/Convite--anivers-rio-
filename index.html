@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma Noite de Pagode</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#111,#1d1d1d,#000);
+color:white;
+text-align:center;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+h1{
+font-size:42px;
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.sub{
+font-size:18px;
+opacity:.9;
+}
+
+.card{
+background:#1b1b1b;
+max-width:700px;
+margin:30px auto;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,215,0,.2);
+}
+
+.info{
+font-size:18px;
+line-height:2;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+background:#FFD700;
+color:#000;
+border-radius:50px;
+font-weight:bold;
+margin:8px;
+}
+
+button,a.botao{
+display:inline-block;
+margin-top:20px;
+padding:16px 30px;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+transition:.3s;
+}
+
+.confirmar{
+background:#25D366;
+color:white;
+}
+
+.maps{
+background:#FFD700;
+color:black;
+}
+
+button:hover,a:hover{
+transform:scale(1.05);
+}
+
+#contador{
+font-size:32px;
+font-weight:bold;
+color:#FFD700;
+margin-top:20px;
+}
+
+footer{
+padding:40px;
+font-size:14px;
+opacity:.6;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:30px;
+}
+
+.info{
+font-size:16px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>🎉 UMA NOITE DE PAGODE</h1>
+
+<p class="sub">
+Venha celebrar uma noite especial com muita música, alegria e resenha!
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="badge">🥁 Pagode</div>
+
+<div class="badge">🍹 Caipirinha liberada até acabar o estoque</div>
+
+<div class="badge">🍺 Traga sua cerveja</div>
+
+<br><br>
+
+<div class="info">
+
+📅 <b>07 de Agosto</b>
+
+<br>
+
+🕙 <b>22h</b>
+
+<br>
+
+📍 Avenida Dom Pedro, nº 1957
+<br>
+Santana - AP
+
+</div>
+
+<div id="contador"></div>
+
+<a
+class="botao confirmar"
+href="https://docs.google.com/forms/d/e/1FAIpQLSfwPGPNinPuN39KiFMZlz-XOQEf1sc_yELLY40lLpxHzYQz0w/viewform?usp=header"
+target="_blank">
+
+✅ Confirmar Presença
+
+</a>
+
+<br>
+
+<a
+class="botao maps"
+href="https://www.google.com/maps/search/?api=1&query=Avenida+Dom+Pedro+1957+Santana+AP"
+target="_blank">
+
+📍 Como Chegar
+
+</a>
+
+</div>
+
+<footer>
+
+Esperamos você para uma noite inesquecível!
+
+</footer>
+
+<script>
+
+const evento = new Date("Aug 7, 2026 22:00:00").getTime();
+
+setInterval(()=>{
+
+const agora = new Date().getTime();
+
+const distancia = evento-agora;
+
+const dias=Math.floor(distancia/(1000*60*60*24));
+
+const horas=Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+const minutos=Math.floor((distancia%(1000*60*60))/(1000*60));
+
+const segundos=Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("contador").innerHTML=
+
+"⏳ "+dias+" dias "+horas+"h "+minutos+"m "+segundos+"s";
+
+},1000);
+
+</script>
+
+</body>
+</html>
